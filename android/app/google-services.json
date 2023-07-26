@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862458102751",
+    "project_id": "n30archstor",
+    "storage_bucket": "n30archstor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862458102751:android:32176024cce9bb0f4afa6a",
+        "android_client_info": {
+          "package_name": "com.neoarch.n30store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862458102751-ugsmdsrbd21hos7h772q9ctjgm9ish8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXwKsR6Y4LIqzIroNqyAj39zdeat0EhTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862458102751-ugsmdsrbd21hos7h772q9ctjgm9ish8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
