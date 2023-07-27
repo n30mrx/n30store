@@ -67,7 +67,8 @@ class AppView extends StatelessWidget {
                   actions: [
                     FilledButton(
                         onPressed: () {
-                          launchUrlString("https://t.me/n30archbot");
+                          launchUrlString("https://t.me/n30archbot",
+                              mode: LaunchMode.externalApplication);
                         },
                         child: Text("Open the bot")),
                     TextButton(
