@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:n30store/components/book_item.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'add_book.dart';
 
@@ -53,18 +54,38 @@ class BookView extends StatelessWidget {
           ));
         },
       ),
-      floatingActionButton: Visibility(
-        visible: cUser.email == "abas93931@gmail.com",
-        child: FloatingActionButton(
-          onPressed: () {
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (cUser.email != "abas93931@gmail.com") {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text("Send a book for review"),
+                  content: Text(
+                      "Hey! thanks for sharing\nIf you want to contribute too the books library\nPlease contact us on @n30archbot  on telegram"),
+                  actions: [
+                    FilledButton(
+                        onPressed: () {
+                          launchUrlString("https://t.me/n30archbot");
+                        },
+                        child: Text("Open the bot")),
+                    TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text("Cancel"))
+                  ],
+                );
+              },
+            );
+          } else {
             Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => AddBook(),
                 ));
-          },
-          child: Icon(Icons.add),
-        ),
+          }
+        },
+        child: Icon(Icons.add),
       ),
     );
   }

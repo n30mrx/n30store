@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:n30store/components/skill_item.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'add_skill.dart';
 
@@ -53,18 +54,38 @@ class SkillView extends StatelessWidget {
           ));
         },
       ),
-      floatingActionButton: Visibility(
-        visible: cUser.email == "abas93931@gmail.com",
-        child: FloatingActionButton(
-          onPressed: () {
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (cUser.email != "abas93931@gmail.com") {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text("Send your skill for review"),
+                  content: Text(
+                      "Hey! thanks for sharing\nIf you want to show your skills to other people\nPlease contact us on @n30archbot  on telegram"),
+                  actions: [
+                    FilledButton(
+                        onPressed: () {
+                          launchUrlString("https://t.me/n30archbot");
+                        },
+                        child: Text("Open the bot")),
+                    TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text("Cancel"))
+                  ],
+                );
+              },
+            );
+          } else {
             Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => Addskill(),
                 ));
-          },
-          child: Icon(Icons.add),
-        ),
+          }
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
