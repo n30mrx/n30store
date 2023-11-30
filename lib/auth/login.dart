@@ -160,9 +160,10 @@ class _LoginPageState extends State<LoginPage> {
               GestureDetector(
                 onTap: () async {
                   try {
-                    await FirebaseAuth.instance.signInWithEmailAndPassword(
-                        email: "anonacc@n30arch.arch",
-                        password: "anonaccArchAc5855#X");
+                    // await FirebaseAuth.instance.signInWithEmailAndPassword(
+                    //     email: "anonacc@n30arch.arch",
+                    //     password: "anonaccArchAc5855#X");
+                    await FirebaseAuth.instance.signInAnonymously();
                   } catch (e) {
                     showDialog(
                       context: context,

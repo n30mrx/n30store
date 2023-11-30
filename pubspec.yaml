@@ -42,6 +42,7 @@ dependencies:
   firebase_app_check: ^0.1.5+1
   url_launcher: ^6.1.12
   firebase_storage: ^11.2.5
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
